@@ -1,3 +1,5 @@
+**For styremedlemmer i echo:** Informasjon om hvordan valget gjennomføres ligger i Google drive under *echo/Valg/Hvordan ha et valg?*
+
 # Opptelling
 
 De som teller fyller inn i et excel ark slik:
@@ -19,7 +21,7 @@ Når alle stemmene er talt opp, eksporterer man filen i .csv-format og gir den n
 * Klon dette github-repoet
 * Gå inn i mappen Valg i terminalen
 * Pass på at fagutvalget-cand.csv ligger i denne mappen
-* Kjør kommandoen: *java -cp Vote-0-4.jar VoteMain -system stvse-meek -nostrict-min-ranks -logfile log.txt fagutvalget-cand.csv*
+* Kjør kommandoen: `java -cp Vote-0-4.jar VoteMain -system stvse-meek -nostrict-min-ranks -logfile log.txt fagutvalget-cand.csv`
 * Hvis programmet kjører riktig, skal det printes en rekkefølge. Dette er rekkefølgen kandidatene er rangert, og nr. 1 - 12 blir valgt inn.
 
 # Problemer som kan oppstå
