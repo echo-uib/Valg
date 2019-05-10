@@ -1,0 +1,147 @@
+<HTML>  
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0 Mac">
+  <TITLE>Voting Systems Toolbox - Instructions</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Voting Systems Toolbox - Instructions</H1>
+
+<P>Here is how to use the software. It assumes that you have java
+working, downloaded the software, have an input file that you
+want to process and have a DOS or shell window open in the appropriate
+directory.</P>
+
+<P>In the examples, you will see something like:</P>
+
+<BLOCKQUOTE>
+  <PRE>java -cp Vote-0-4.jar VoteMain -system stv-meek -seats 3 examples/colours-cand.csv</PRE>
+</BLOCKQUOTE>
+
+<P>There are two parts to this:</P>
+
+<BLOCKQUOTE>
+  <PRE>java -cp Vote-0-4.jar VoteMain</PRE>
+</BLOCKQUOTE>
+
+<P>just tells java to run the VoteMain package from the <FONT
+ FACE="Courier">Vote-0-4.jar</FONT> file. This is the same each
+time the program is run. The second part:</P>
+
+<BLOCKQUOTE>
+  <PRE>-system stv-meek -seats 3 examples/colours-cand.csv</PRE>
+</BLOCKQUOTE>
+
+<P>is a list of command line switches specifying such things as
+the voting system and the input file, in this case specifying
+that STV is to be used to select 3 candidates and <FONT FACE="Courier">colours-cand.csv</FONT>
+in the folder <FONT FACE="Courier">examples</FONT> is to be used
+as the input file.</P>
+
+<P>Here is a table of all the parameters:</P>
+
+<P><TABLE WIDTH="500" BORDER="1" CELLSPACING="2" CELLPADDING="2">
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>Switch</B></TD> 
+    <TD WIDTH="15%">&nbsp;<B>Required?</B></TD> 
+    <TD WIDTH="65%">&nbsp;<B>Meaning</B></TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>-system</B> <I>name</I></TD> 
+    <TD WIDTH="15%">
+      <P><CENTER>&nbsp;yes</CENTER></TD>
+    <TD WIDTH="65%">
+      <P>&nbsp;This is one of:</P>
+
+      <UL>
+        <LI><B>stv-meek</B> for Single Transferable Vote
+        <LI><B>stvse-meek</B> for Single Transferable Vote (Successive
+        Elimination)
+      </UL>
+    </TD>
+  </TR>
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>-seats</B> <I>number</I></TD> 
+    <TD WIDTH="15%">
+      <P><CENTER>&nbsp;yes for the system <B>stv-meek</B></CENTER></TD>
+    <TD WIDTH="65%">&nbsp;The number of candiates to be elected.
+      For <B>stvse-meek</B>, this option may be given with the parameter
+      <B>ordered</B>.</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>-input</B> <I>filename</I></TD> 
+    <TD WIDTH="15%">
+      <P><CENTER>&nbsp;yes</CENTER></P>
+
+      <P><CENTER><B>-input</B> is optional</CENTER>
+    </TD>
+    <TD WIDTH="65%">&nbsp;The input file which the votes are to be
+      read from. The <B>-input</B> is optional as the first parameter
+      without a switch specifying what it is will be used as the input
+      file.</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>-output</B> <I>filename</I></TD> 
+    <TD WIDTH="15%">
+      <P><CENTER>&nbsp;&nbsp;no</CENTER></P>
+
+      <P><CENTER>&nbsp;<B>-output</B> is optional</CENTER>
+    </TD>
+    <TD WIDTH="65%">&nbsp;The input file which the results are to
+      be written to. If not specified, output will be written to the
+      screen. The <B>-output</B> is optional as the second parameter
+      without a switch specifying what it is will be used as the output
+      file.</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>-logfile</B> <I>filename</I></TD> 
+    <TD WIDTH="15%">
+      <P><CENTER>&nbsp;no</CENTER></TD>
+    <TD WIDTH="65%">&nbsp;The file to write any logging, progress
+      or error information to. If not specified, this will get written
+      to the screen.</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>-debug</B></TD> 
+    <TD WIDTH="15%">
+      <P><CENTER>&nbsp;&nbsp;no</CENTER></TD>
+    <TD WIDTH="65%">&nbsp;Whether or not to print full working and
+      debugging information. <B>Warning:</B> this can be verbose</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>-log</B></TD> 
+    <TD WIDTH="15%">
+      <P><CENTER>&nbsp;&nbsp;no</CENTER></TD>
+    <TD WIDTH="65%">&nbsp;Whether or not to print logging information.
+      This is recommended</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>-min-ranks</B> <I>number</I></TD> 
+    <TD WIDTH="15%">
+      <P><CENTER>&nbsp;&nbsp;no</CENTER></TD>
+    <TD WIDTH="65%">&nbsp;How many candidates each voter must rank.
+      Defaults to 1</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>-nostrict-legal</B></TD> 
+    <TD WIDTH="15%">
+      <P><CENTER>&nbsp;&nbsp;no</CENTER></TD>
+    <TD WIDTH="65%">&nbsp;Only logs certain types of voting irregularites
+      rather than giving an error</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="20%">&nbsp;<B>-nostrict-min-ranks</B></TD> 
+    <TD WIDTH="15%">
+      <P><CENTER>&nbsp;&nbsp;no</CENTER></TD>
+    <TD WIDTH="65%">&nbsp;Only logs a voter ranking insufficient
+      candidates rather than giving an error (in a future version of
+      the software, that vote will not be counted)</TD> 
+  </TR>
+</TABLE></P>
+
+<A HREF="http://sourceforge.net/"><IMG SRC="http://sourceforge.net/sflogo.php?group_id=37890&type=1"
+WIDTH="88" HEIGHT="31" BORDER="0" ALT="SourceForge Logo" NATURALSIZEFLAG="0"
+ALIGN="BOTTOM"></A>
+
+</BODY>
+</HTML>

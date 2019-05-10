@@ -1,0 +1,12 @@
+In this example, five voters rank their most to
+least favorite colours from the following options:
+
+Blue,Green,Orange,Red,Violet,Yellow
+
+The results (from most to least favorite) is:
+
+Voter1: Yellow,Violet,Red,Blue,Green,Orange
+Voter2: Orange,Green,Yellow,Red,Violet,Blue
+Voter3: Red,Green,Violet,Blue,Yellow,Orange
+Voter4: Green,Yellow,Red,Blue,Orange,Violet
+Voter5: Green,Orange,Red,Violet,Yellow,Blue

@@ -1,0 +1,66 @@
+<HTML>  
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0 Mac">
+  <TITLE>Voting Systems Toolbox - Download and Run</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Voting Systems Toolbox - Download and Run</H1>
+
+<H3>Requirements</H3>
+
+<BLOCKQUOTE>
+  <P>To run the Voting Systems Toolbox, you'll need Java 1.1 or
+  later. If you have Java already, skip this section.</P>
+  <P>You can download Java for Windows at <A HREF="http://java.sun.com/j2se/">http://java.sun.com/j2se/</A>
+  - if you just want to run the software, you only need the JRE
+  (Java Runtime environment)</P>
+  <P>If you don't have Java installed on your machine, and just
+  want a minimal version of Java for Windows, go to <A HREF="http://java.sun.com/products/jdk/1.1/jre/download-jre-windows.html">http://java.sun.com/products/jdk/1.1/jre/download-jre-windows.html</A></P></BLOCKQUOTE>
+
+<H3>Downloading</H3>
+
+<BLOCKQUOTE>
+  <P>Go to the download page at sourceforge <A HREF="http://sourceforge.net/projects/votesystem">http://sourceforge.net/projects/votesystem</A>,
+  scroll down to <B>Latest file releases</B>, and Click the <B>Download</B>
+  link. For a shortcut, download it directly from <A HREF="http://prdownloads.sourceforge.net/votesystem/vote-0-4.zip">http://prdownloads.sourceforge.net/votesystem/vote-0-4.zip</A></P></BLOCKQUOTE>
+
+<H3>Running</H3>
+
+<UL>
+  <LI>Make sure you are in the <FONT FACE="Courier">vote-0-4</FONT>
+  directory at a command prompt.
+  <LI>Enter the following (I'll explain later what it means):
+</UL>
+
+<BLOCKQUOTE>
+  <PRE>java -cp Vote-0-4.jar VoteMain -system stv-meek -seats 3 examples/colours-cand.csv</PRE>
+  <P>or</P>
+  <PRE>java -cp Vote-0-4.jar VoteMain -system stv-meek -seats 3 examples/colours-rank.csv</PRE>
+  <P>You should get the following output (or similar):</P>
+  <PRE>Number of candidates: 6
+Number of voters: 5
+Blue                                     not elected
+Green                                    elected
+Orange                                   elected
+Red                                      not elected
+Violet                                   not elected
+Yellow                                   elected
+Done!</PRE>
+  <P>Email <A HREF="mailto:royward0@users.sourceforge.net">Roy
+  Ward</A> or consult your local computer guru with any problems.</P></BLOCKQUOTE>
+
+<H3>For the technically minded only</H3>
+
+<BLOCKQUOTE>
+  <P>The up to the minute version of the project is available from
+  Sourceforge's CVS repository. Instructions for accessing it can
+  be found <A HREF="http://sourceforge.net/cvs/?group_id=37890">here</A>.
+  The module name is <B>votesystem</B>.</P></BLOCKQUOTE>
+
+<A HREF="http://sourceforge.net/"><IMG SRC="http://sourceforge.net/sflogo.php?group_id=37890&type=1"
+WIDTH="88" HEIGHT="31" BORDER="0" ALT="SourceForge Logo" NATURALSIZEFLAG="0"
+ALIGN="BOTTOM"></A>
+
+</BODY>
+</HTML>

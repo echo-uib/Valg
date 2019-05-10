@@ -1,0 +1,5 @@
+rank order
+NAME,Blue,Green,Orange,Red,Violet,Yellow
+LABEL,1,2,3,4,5,6
+Voter_A,2,4,1,0,0,0
+Voter_B,4,3,5,6,0,0

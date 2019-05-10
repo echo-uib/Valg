@@ -1,0 +1,326 @@
+<HTML>  
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0 Mac">
+  <TITLE>Voting Systems Toolbox - Input Format</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H1>Voting Systems Toolbox - Input Format</H1>
+
+<P>This section describes how to get the vote data into the program.</P>
+
+<P>There are may ways to collect votes, so there are two different
+ways to specify the input (more details below):</P>
+
+<UL>
+  <LI><B>Rank Ordering</B> - where the vote is a list consisting
+  of {first preference, second preference, ... .last preference}
+  <LI><B>Candidate Ordering</B> - where the vote is a list consisting
+  of {rank given to first candidate, rank given to second candidate,
+  ... , rank given to last candidate}
+</UL>
+
+<P>For the current version, it is assumed that the information
+has been entered in a spreadsheet such as Excel that can save
+'comma seperated value' files, although the information can be
+entered directly.</P>
+
+<P>For example, a voter ranks their most to least favorite colours
+from the following colours:</P>
+
+<P><TABLE WIDTH="300" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+  <TR>
+    <TD WIDTH="16%">&nbsp;Blue</TD> 
+    <TD WIDTH="16%">&nbsp;Green</TD> 
+    <TD WIDTH="17%">&nbsp;Orange</TD> 
+    <TD WIDTH="17%">&nbsp;Red</TD> 
+    <TD WIDTH="17%">&nbsp;Violet</TD> 
+    <TD WIDTH="17%">&nbsp;Yellow</TD> 
+  </TR>
+</TABLE></P>
+
+<P>Say a voter prefers Green, second choice is Red, third choice
+is Blue, and doesn't really care about the rest.</P>
+
+<H3>Rank ordering</H3>
+
+<P>In rank ordering, the vote is expressed in the order of the
+choices:</P>
+
+<P><TABLE WIDTH="300" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+  <TR>
+    <TD WIDTH="16%">&nbsp;Green</TD> 
+    <TD WIDTH="16%">&nbsp;Red</TD> 
+    <TD WIDTH="17%">&nbsp;Blue</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+  </TR>
+</TABLE></P>
+
+<P>This gets a little cumbersome to enter, so every name can be
+replaced by a label (these can be more than one character):</P>
+
+<P><TABLE WIDTH="300" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+  <TR>
+    <TD WIDTH="16%">&nbsp;Blue</TD> 
+    <TD WIDTH="16%">&nbsp;Green</TD> 
+    <TD WIDTH="17%">&nbsp;Orange</TD> 
+    <TD WIDTH="17%">&nbsp;Red</TD> 
+    <TD WIDTH="17%">&nbsp;Violet</TD> 
+    <TD WIDTH="17%">&nbsp;Yellow</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="16%">&nbsp;b</TD> 
+    <TD WIDTH="16%">&nbsp;g</TD> 
+    <TD WIDTH="17%">&nbsp;o</TD> 
+    <TD WIDTH="17%">&nbsp;r</TD> 
+    <TD WIDTH="17%">&nbsp;v</TD> 
+    <TD WIDTH="17%">&nbsp;y</TD> 
+  </TR>
+</TABLE></P>
+
+<P>Thus the vote can be expressed as:</P>
+
+<P><TABLE WIDTH="300" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+  <TR>
+    <TD WIDTH="16%">&nbsp;g</TD> 
+    <TD WIDTH="16%">&nbsp;r</TD> 
+    <TD WIDTH="17%">&nbsp;b</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+  </TR>
+</TABLE></P>
+
+<H3>Candidate ordering</H3>
+
+<P>In most elections, the voter will have filled out some sort
+of form:</P>
+
+<P><TABLE WIDTH="300" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+  <TR>
+    <TD WIDTH="16%">&nbsp;Blue</TD> 
+    <TD WIDTH="16%">&nbsp;Green</TD> 
+    <TD WIDTH="17%">&nbsp;Orange</TD> 
+    <TD WIDTH="17%">&nbsp;Red</TD> 
+    <TD WIDTH="17%">&nbsp;Violet</TD> 
+    <TD WIDTH="17%">&nbsp;Yellow</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="16%">&nbsp;3</TD> 
+    <TD WIDTH="16%">&nbsp;1</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+    <TD WIDTH="17%">&nbsp;2</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+  </TR>
+</TABLE></P>
+
+<P>where a 1 means first preference, 2 means second preference,
+etc., so the vote can be expressed:</P>
+
+<P><TABLE WIDTH="300" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+  <TR>
+    <TD WIDTH="16%">&nbsp;3</TD> 
+    <TD WIDTH="16%">&nbsp;1</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+    <TD WIDTH="17%">&nbsp;2</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+    <TD WIDTH="17%">&nbsp;</TD> 
+  </TR>
+</TABLE></P>
+
+<H3>Vote input format</H3>
+
+<P>This is specified in terms of a spreadsheet - see next subsection
+for doing it as a file.</P>
+
+<P>The first row is one of:</P>
+
+<BLOCKQUOTE>
+  <PRE>rank ordering
+candidate ordering</PRE>
+</BLOCKQUOTE>
+
+<P>to specify which ordering is used (the word <FONT FACE="Courier">ordering</FONT>
+can be left off, as everything after the first word is ignored).
+It is most important to get this right, as otherwise the votes
+will be scrambled.</P>
+
+<P>The second row is the word:</P>
+
+<BLOCKQUOTE>
+  <PRE>NAME</PRE>
+</BLOCKQUOTE>
+
+<P>in one cell followed by the list of names, one per cell.</P>
+
+<P>If <B>rank ordering is used</B>, the next line is the word</P>
+
+<BLOCKQUOTE>
+  <PRE>LABEL</PRE>
+</BLOCKQUOTE>
+
+<P>in one cell followed by the list of labels, one per cell. <B>Do
+not</B>&nbsp;use the string &quot;0&quot; consisting of the single
+digit zero as a label. If <B>candidate ordering is used</B>, omit
+this line.</P>
+
+<P>Then each row represents one voter, with the some sort of voter
+identifier in the first cell, the only restriction being that
+it be unique per voter, followed by the vote in either rank ordering
+or candidate ordering, as specified on the first line.</P>
+
+<P>Say that we have the voter above, called Voter_A, and another
+voter (Voter_B) who has the preference:</P>
+
+<P>Red, Orange, Violet, Yellow</P>
+
+<P>Putting it all together, these votes can be represented as
+(using the two ordering methods):</P>
+
+<P><TABLE WIDTH="350" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+  <TR>
+    <TD WIDTH="14%">&nbsp;rank</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="15%">&nbsp;</TD> 
+    <TD WIDTH="15%">&nbsp;</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="14%">&nbsp;NAME</TD> 
+    <TD WIDTH="14%">&nbsp;Blue</TD> 
+    <TD WIDTH="14%">&nbsp;Green</TD> 
+    <TD WIDTH="14%">&nbsp;Orange</TD> 
+    <TD WIDTH="14%">&nbsp;Red</TD> 
+    <TD WIDTH="15%">&nbsp;Violet</TD> 
+    <TD WIDTH="15%">&nbsp;Yellow</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="14%">&nbsp;LABEL</TD> 
+    <TD WIDTH="14%">&nbsp;b</TD> 
+    <TD WIDTH="14%">&nbsp;g</TD> 
+    <TD WIDTH="14%">&nbsp;o</TD> 
+    <TD WIDTH="14%">&nbsp;r</TD> 
+    <TD WIDTH="15%">&nbsp;v</TD> 
+    <TD WIDTH="15%">&nbsp;y</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="14%">&nbsp;Voter_A</TD> 
+    <TD WIDTH="14%">&nbsp;g</TD> 
+    <TD WIDTH="14%">&nbsp;r</TD> 
+    <TD WIDTH="14%">&nbsp;b</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="15%">&nbsp;</TD> 
+    <TD WIDTH="15%">&nbsp;</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="14%">&nbsp;Voter_B</TD> 
+    <TD WIDTH="14%">&nbsp;r</TD> 
+    <TD WIDTH="14%">&nbsp;o</TD> 
+    <TD WIDTH="14%">&nbsp;v</TD> 
+    <TD WIDTH="14%">&nbsp;y</TD> 
+    <TD WIDTH="15%">&nbsp;</TD> 
+    <TD WIDTH="15%">&nbsp;</TD> 
+  </TR>
+</TABLE></P>
+
+<P>or</P>
+
+<P><TABLE WIDTH="350" BORDER="1" CELLSPACING="2" CELLPADDING="0">
+  <TR>
+    <TD WIDTH="14%">&nbsp;candidate</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="15%">&nbsp;</TD> 
+    <TD WIDTH="15%">&nbsp;</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="14%">&nbsp;NAME</TD> 
+    <TD WIDTH="14%">&nbsp;Blue</TD> 
+    <TD WIDTH="14%">&nbsp;Green</TD> 
+    <TD WIDTH="14%">&nbsp;Orange</TD> 
+    <TD WIDTH="14%">&nbsp;Red</TD> 
+    <TD WIDTH="15%">&nbsp;Violet</TD> 
+    <TD WIDTH="15%">&nbsp;Yellow</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="14%">&nbsp;Voter_A</TD> 
+    <TD WIDTH="14%">&nbsp;3</TD> 
+    <TD WIDTH="14%">&nbsp;1</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="14%">&nbsp;2</TD> 
+    <TD WIDTH="15%">&nbsp;</TD> 
+    <TD WIDTH="15%">&nbsp;</TD> 
+  </TR>
+  <TR>
+    <TD WIDTH="14%">&nbsp;Voter_B</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="14%">&nbsp;</TD> 
+    <TD WIDTH="14%">&nbsp;2</TD> 
+    <TD WIDTH="14%">&nbsp;1</TD> 
+    <TD WIDTH="15%">&nbsp;3</TD> 
+    <TD WIDTH="15%">&nbsp;4</TD> 
+  </TR>
+</TABLE></P>
+
+<P>Now simply save this as a &quot;.csv&quot; (comma separated
+value) file, and run the voting software on it.</P>
+
+<H3>File Format</H3>
+
+<P>This is simply like the spreadsheet, with the cells replaced
+by commas, so the above two examples would be as follows (filenames
+are in <I><FONT FACE="Courier">Italics</FONT></I>):</P>
+
+<PRE><I>test1a.csv</I>
+rank order
+NAME,Blue,Green,Orange,Red,Violet,Yellow
+LABEL,b,g,o,r,v,y
+Voter_A,g,r,b
+Voter_B,r,o,v,y</PRE>
+
+<P>or</P>
+
+<PRE><I>test1b.csv</I>
+candidate order
+NAME,Blue,Green,Orange,Red,Violet,Yellow
+Voter_A,3,1,,2
+Voter_B,,,2,1,3,4</PRE>
+
+<P><B>NOTE</B>: this form was broken in version 0.3 (although
+the version with 0's to fill the gaps did work). It is fixed in
+0.4 onwards.</P>
+
+<P>The software can handle trailing commas, and also zero to fill
+the gaps, so either of the following would also work:</P>
+
+<PRE><I>test1c.csv</I>
+rank order
+NAME,Blue,Green,Orange,Red,Violet,Yellow
+LABEL,1,2,3,4,5,6
+Voter_A,2,4,1,0,0,0
+Voter_B,4,3,5,6,0,0</PRE>
+
+<P>or</P>
+
+<PRE><I>test1d.csv</I>
+candidate order
+NAME,Blue,Green,Orange,Red,Violet,Yellow
+Voter_A,3,1,0,2,0,0
+Voter_B,0,0,2,1,3,4</PRE>
+
+<P>Now go to the section on <A HREF="reference.html">running the
+program</A> to process this data.</P>
+
+<A HREF="http://sourceforge.net/"><IMG SRC="http://sourceforge.net/sflogo.php?group_id=37890&type=1"
+WIDTH="88" HEIGHT="31" BORDER="0" ALT="SourceForge Logo" NATURALSIZEFLAG="0"
+ALIGN="BOTTOM"></A>
+
+</BODY>
+</HTML>

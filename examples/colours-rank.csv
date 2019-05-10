@@ -1,0 +1,8 @@
+rank order
+NAME,Blue,Green,Orange,Red,Violet,Yellow
+LABEL,b,g,o,r,v,y
+Voter1,y,v,r,b,g,o
+Voter2,o,g,y,r,v,b
+Voter3,r,g,v,b,y,o
+Voter4,g,y,r,b,o,v
+Voter5,g,o,r,v,y,b
