@@ -1,6 +1,12 @@
 # Opptelling
 
-De som teller fyller inn i et excel ark. Når alle stemmene er talt opp, eksporterer man filen i .csv-format og gir den navnet **fagutvalget-cand.csv**.
+De som teller fyller inn i et excel ark slik:
+
+| candidate order |   |   |   |
+| NAME   | Per | Pål | Nils |
+| Stemme1 | 1 | 3 | 2 | 
+
+Når alle stemmene er talt opp, eksporterer man filen i .csv-format og gir den navnet **fagutvalget-cand.csv**.
 
 
 # For å kjøre programmet
