@@ -6,7 +6,7 @@ De som teller fyller inn i et excel ark slik:
 
 | candidate order |     |     |       |      |
 | --------------- | --- | --- | ----- | ---- |
-| NAME            | Per | Pål | Nils  | Erik |
+| NAME            | Per | Pål | Eva   | Ada  |
 | Stemme1         |     | 3   | 2     |  1   |
 | Stemme2         |     | 3   | 2     |      |
 | Stemme3         | 2   | 1   |       |  3   |
